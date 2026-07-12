@@ -1,3 +1,7 @@
+output "container_app_environment_custom_domains_id" {
+  description = "Map of id values across all container_app_environment_custom_domains, keyed the same as var.container_app_environment_custom_domains"
+  value       = { for k, v in azurerm_container_app_environment_custom_domain.container_app_environment_custom_domains : k => v.id }
+}
 output "container_app_environment_custom_domains_certificate_blob_base64" {
   description = "Map of certificate_blob_base64 values across all container_app_environment_custom_domains, keyed the same as var.container_app_environment_custom_domains"
   value       = { for k, v in azurerm_container_app_environment_custom_domain.container_app_environment_custom_domains : k => v.certificate_blob_base64 }
